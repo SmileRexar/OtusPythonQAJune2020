@@ -48,11 +48,6 @@ def test_listing_all_resources(start_url):
 ])
 def test_create_resource(start_url, data, code_response):
     url = f'{start_url}/posts'
-    # data = {
-    #     'title': 'foo1',
-    #     'body': 'bar1',
-    #     'userId': 123
-    # }
     headers = {
         'Content-type': 'application/json',
         'charset': 'UTF-9'}
