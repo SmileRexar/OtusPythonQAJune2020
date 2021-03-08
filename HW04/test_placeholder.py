@@ -3,7 +3,7 @@ import json
 import pytest
 import requests
 
-from OtusPythonQA.HW04.lib.helpers import assert_valid_schema
+from HW04.lib.helpers import assert_valid_schema
 
 
 @pytest.mark.parametrize("post_id , code_response, res_not_empty", [

@@ -6,6 +6,7 @@ import requests
 def session():
     return requests.Session()
 
+
 @pytest.fixture(scope="module")
 def start_url(request):
     return request.config.getoption("--url")
