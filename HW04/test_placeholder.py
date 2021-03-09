@@ -31,20 +31,16 @@ def test_listing_all_resources(start_url):
 
 
 @pytest.mark.parametrize("data , code_response", [
-    (
-            {
-                'title': 'foo1',
-                'body': 'bar1',
-                'userId': 123
-            },
-            201),
-    (
-            {
-                'title': 'fd3af2f21g2e3gd',
-                'body': '1dd3d3ddf5fdd3ddd5dd3ddd4dd4ddd5dd5d4dd5d3dd4ddd5ddd3d',
-                'userId': 12433524545
-            },
-            201),
+    ({
+         'title': 'foo1',
+         'body': 'bar1',
+         'userId': 123
+     }, 201),
+    ({
+         'title': 'fd3af2f21g2e3gd',
+         'body': '1dd3d3ddf5fdd3ddd5dd3ddd4dd4ddd5dd5d4dd5d3dd4ddd5ddd3d',
+         'userId': 12433524545
+     }, 201),
 ])
 def test_create_resource(start_url, data, code_response):
     url = f'{start_url}/posts'
@@ -69,22 +65,18 @@ def test_create_resource(start_url, data, code_response):
 
 
 @pytest.mark.parametrize("data , code_response", [
-    (
-            {
-                'post_id': '2',
-                'title': 'foo',
-                'body': 'bar',
-                'userId': '123'
-            },
-            200),
-    (
-            {
-                'post_id': '15615',
-                'title': 'foo',
-                'body': f'bar',
-                'userId': '123'
-            },
-            500),
+    ({
+         'post_id': '2',
+         'title': 'foo',
+         'body': 'bar',
+         'userId': '123'
+     }, 200),
+    ({
+         'post_id': '15615',
+         'title': 'foo',
+         'body': f'bar',
+         'userId': '123'
+     }, 500),
 ])
 def test_update(session, start_url, data, code_response):
     post_id = data['post_id']
@@ -101,14 +93,12 @@ def test_update(session, start_url, data, code_response):
 
 
 @pytest.mark.parametrize("data , code_response", [
-    (
-            {
-                'post_id': '-1',
-                'title': 'foo',
-                'body': 'bar',
-                'userId': '123'
-            },
-            500)
+    ({
+         'post_id': '-1',
+         'title': 'foo',
+         'body': 'bar',
+         'userId': '123'
+     }, 500)
 
 ])
 def test_update_negative(session, start_url, data, code_response):
@@ -118,18 +108,14 @@ def test_update_negative(session, start_url, data, code_response):
 
 
 @pytest.mark.parametrize("data , code_response", [
-    (
-            {
-                'post_id': '2',
-                'title': 'foo',
-            },
-            200),
-    (
-            {
-                'post_id': '100',
-                'title': 'faffing',
-            },
-            200),
+    ({
+         'post_id': '2',
+         'title': 'foo',
+     }, 200),
+    ({
+         'post_id': '100',
+         'title': 'faffing',
+     }, 200),
 
 ])
 def test_update_with_patch(session, start_url, data, code_response):
