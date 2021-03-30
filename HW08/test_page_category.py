@@ -6,9 +6,6 @@ def test_page_category(browser, start_url):
     # Проверка титл страницы
     page_title = browser.title
     assert page_title == "Desktops"
-
-    # browser.implicitly_wait(1)
-
     # Проверка New Customer и активности кнопки
     product_pay_btn = browser.find_element_by_css_selector(
         '#content > div:nth-child(7) > div:nth-child(1) > div > div:nth-child(2) > div.button-group > button:nth-child(1)')

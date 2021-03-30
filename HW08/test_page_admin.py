@@ -17,7 +17,6 @@ def test_page_admin(browser, start_url, login, passw, is_valid_pair):
     # Проверяем титл страницы
     page_title = browser.title
     assert page_title == "Administration"
-    # browser.implicitly_wait(1)
     # Проверка New Customer и активности кнопки
     browser.find_element_by_css_selector('#input-username').send_keys(login)
     browser.find_element_by_css_selector('#input-password').send_keys(passw)

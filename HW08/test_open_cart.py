@@ -16,11 +16,3 @@ def test_opencart(browser, start_url):
     js_button = WebDriverWait(browser, 2).until(EC.visibility_of_element_located(
         (By.CSS_SELECTOR, "body > footer > div > div > div:nth-child(1) > ul > li:nth-child(1) > a")))
     js_button.click()
-    # return self.find_element(by=By.CSS_SELECTOR, value=css_selector)
-
-#
-# def test_opencart_2(firefox_browser, start_url):
-#     firefox_browser.get(start_url)
-#     # Проверяем титл страницы
-#     page_title = firefox_browser.title
-#     assert page_title == "Your Store"

@@ -4,7 +4,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 def test_page_product(browser, start_url):
-
     url = start_url + 'index.php?route=product/product&path=57&product_id=49'
     browser.get(url)
 
