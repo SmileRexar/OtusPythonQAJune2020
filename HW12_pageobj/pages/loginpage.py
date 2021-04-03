@@ -25,12 +25,10 @@ class LoginPage(BasePage):
     btn_logout = (By.CSS_SELECTOR, '#content > div > div > a')
     lbl_logout_activate = (By.CSS_SELECTOR, '#top-links > ul > li.dropdown.open > ul > li:nth-child(5) > a')
 
-    # top-links > ul > li.dropdown.open > ul > li:nth-child(5) > a
-
-    # logout = (By.CSS_SELECTOR, 'logout')
+    logging_enabled = True
 
     def __init__(self, driver):
-        super().__init__(driver)
+        super().__init__(driver, logging_enabled=self.logging_enabled)
         self.driver = driver
         self.base_url = f'{self.base_url}/index.php?route=account/login'
 
@@ -82,7 +80,7 @@ class LoginPage(BasePage):
             self.find_element(locator=self.lbl_logout_activate, time=t_ss)
             return True
         except Exception as e:
-            print(e)
+            #print(e)
             return False
 
     def _is_not_valid_sign_in(self):
@@ -111,7 +109,3 @@ class LoginPage(BasePage):
         self._set_email(email)
         self._set_password(passwd)
         self._set_sign_user()
-    #     self._get_accept()
-    #
-    # def _get_accept(self):
-    #     return self.find_element(locator=self.alert_success_create).text

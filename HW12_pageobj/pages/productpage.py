@@ -4,10 +4,6 @@ from HW12_pageobj.pages.base import BasePage
 
 
 class ProductPage(BasePage):
-    # username = (By.ID, 'input-username')
-    # password = (By.ID, 'input-password')
-    # submit_button = (By.CSS_SELECTOR, 'button')
-    # logout = (By.CSS_SELECTOR, 'logout')
 
     # Вкладка Description
     review1 = (By.CSS_SELECTOR, '#content > div > div.col-sm-8 > ul.nav.nav-tabs > li.active')
@@ -26,8 +22,10 @@ class ProductPage(BasePage):
     btn_add_to_card = (By.CSS_SELECTOR, '#button-cart')
     alert_succes_to_pay = (By.CSS_SELECTOR, 'div.alert.alert-success.alert-dismissible')
 
+    logging_enabled = False
+
     def __init__(self, driver):
-        super().__init__(driver)
+        super().__init__(driver, logging_enabled=self.logging_enabled)
         self.driver = driver
         self.base_url = f'{self.base_url}/tablet/samsung-galaxy-tab-10-1'
 

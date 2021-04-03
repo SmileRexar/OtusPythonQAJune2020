@@ -7,10 +7,10 @@ class AdminLoginPage(BasePage):
     password = (By.ID, 'input-password')
     submit_button = (By.CSS_SELECTOR, 'button')
 
-    # logout = (By.CSS_SELECTOR, 'logout')
+    logging_enabled = False
 
     def __init__(self, driver):
-        super().__init__(driver)
+        super().__init__(driver, logging_enabled=self.logging_enabled)
         self.driver = driver
         self.base_url = f'{self.base_url}/admin/'
 
@@ -26,6 +26,7 @@ class AdminLoginPage(BasePage):
         self._set_username_(username)
         self._set_password_(password)
         self.find_element(locator=self.submit_button).click()
+        return self
 
     def logout(self):
         pass
