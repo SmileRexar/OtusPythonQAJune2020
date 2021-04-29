@@ -17,3 +17,8 @@ pytest_plugins = [
 
 ]
 
+
+def pytest_addoption(parser):
+    parser.addoption("--browser", default="chrome")
+    parser.addoption("--url_base", default="localhost")
+    parser.addoption("--executor", default="localhost")
