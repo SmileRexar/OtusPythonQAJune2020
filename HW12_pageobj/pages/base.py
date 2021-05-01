@@ -8,7 +8,7 @@ import allure
 
 
 class BasePage(object):
-    base_url = "http://localhost"
+    base_url = "http://172.22.0.1"
 
     def __init__(self, driver, logging_enabled: bool = False):
         self.driver = driver

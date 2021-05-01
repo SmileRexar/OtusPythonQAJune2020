@@ -68,8 +68,8 @@ class CategoryPage(BasePage):
         self._set_add_compare(self.css_btn_compare_2)
         self._comp_prod()
 
-    def set_view_on_page(self, view = 'list_view'):
-        if view =='list_view':
+    def set_view_on_page(self, view='list_view'):
+        if view == 'list_view':
             self._set_list_view()
         if view == 'grid_view':
             self._set_grid_view()

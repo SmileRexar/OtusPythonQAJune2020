@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-from HW12_pageobj.pages.base import BasePage
+from pages.base import BasePage
 
 
 class ProductPage(BasePage):
@@ -26,6 +26,7 @@ class ProductPage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver, logging_enabled=self.logging_enabled)
+        
         self.driver = driver
         self.base_url = f'{self.base_url}/tablet/samsung-galaxy-tab-10-1'
 

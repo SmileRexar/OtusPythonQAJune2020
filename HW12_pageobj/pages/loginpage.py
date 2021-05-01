@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-from .base import BasePage
+from pages.base import BasePage
 
 
 class LoginPage(BasePage):

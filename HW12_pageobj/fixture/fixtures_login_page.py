@@ -1,5 +1,6 @@
 import pytest
-from HW12_pageobj.pages.loginpage import LoginPage
+
+from pages.loginpage import LoginPage
 
 
 @pytest.fixture(scope="function")
