@@ -1,5 +1,6 @@
 import pytest
-from HW12_pageobj.pages.categorypage import CategoryPage
+
+from pages.categorypage import CategoryPage
 
 
 @pytest.fixture(scope="function")

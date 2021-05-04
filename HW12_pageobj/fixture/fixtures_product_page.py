@@ -1,5 +1,6 @@
 import pytest
-from HW12_pageobj.pages.productpage import ProductPage
+
+from pages.productpage import ProductPage
 
 
 @pytest.fixture(scope="function")
